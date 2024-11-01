@@ -8,68 +8,92 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-user = User.where(email: 'tapands.das@gmail.com').first_or_initialize
-user.update!(
+tapan = User.where(email: 'tapands.das@gmail.com').first_or_initialize
+tapan.update!(
     password: 'password',
     password_confirmation: 'password'
 )
 
-user = User.where(email: 'debadash@gmail.com').first_or_initialize
-user.update!(
+deba = User.where(email: 'debadash@gmail.com').first_or_initialize
+deba.update!(
     password: 'password_two',
     password_confirmation: 'password_two'
 )
 
-user = User.where(email: 'subhamnanda@gmail.com').first_or_initialize
-user.update!(
+subham = User.where(email: 'subhamnanda@gmail.com').first_or_initialize
+subham.update!(
     password: 'password_three',
     password_confirmation: 'password_three'
 )
 
-user = User.where(email: 'shaktimishra@gmail.com').first_or_initialize
-user.update!(
+shakti = User.where(email: 'shaktimishra@gmail.com').first_or_initialize
+shakti.update!(
     password: 'password_four',
     password_confirmation: 'password_four'
 )
 
-user = User.where(email: 'narayansatpathy@gmail.com').first_or_initialize
-user.update!(
+narayan = User.where(email: 'narayansatpathy@gmail.com').first_or_initialize
+narayan.update!(
     password: 'password_five',
     password_confirmation: 'password_five'
 )
 
-user = User.where(email: 'satyasahoo@gmail.com').first_or_initialize
-user.update!(
+satya = User.where(email: 'satyasahoo@gmail.com').first_or_initialize
+satya.update!(
     password: 'password_six',
     password_confirmation: 'password_six'
 )
 
-user = User.where(email: 'sibamohapatra@gmail.com').first_or_initialize
-user.update!(
+siba = User.where(email: 'sibamohapatra@gmail.com').first_or_initialize
+siba.update!(
     password: 'password_seven',
     password_confirmation: 'password_seven'
 )
 
-user = User.where(email: 'swabhimandas@gmail.com').first_or_initialize
-user.update!(
+swabhiman = User.where(email: 'swabhimandas@gmail.com').first_or_initialize
+swabhiman.update!(
     password: 'password_eight',
     password_confirmation: 'password_eight'
 )
 
-user = User.where(email: 'sekhardas@gmail.com').first_or_initialize
-user.update!(
+sekhar = User.where(email: 'sekhardas@gmail.com').first_or_initialize
+sekhar.update!(
     password: 'password_nine',
     password_confirmation: 'password_nine'
 )
 
-user = User.where(email: 'sanjayadas@gmail.com').first_or_initialize
-user.update!(
+sanjaya = User.where(email: 'sanjayadas@gmail.com').first_or_initialize
+sanjaya.update!(
     password: 'password_ten',
     password_confirmation: 'password_ten'
 )
 
-user = User.where(email: 'rakeshmishra@gmail.com').first_or_initialize
-user.update!(
+rakesh = User.where(email: 'rakeshmishra@gmail.com').first_or_initialize
+rakesh.update!(
     password: 'password_eleven',
     password_confirmation: 'password_eleven'
 )
+
+nanda_bahaghara = subham.created_events.find_or_initialize_by(
+    title: 'Nanda Bahaghara',
+    date: '2025-01-26 15:00:00'
+)
+nanda_bahaghara.save!
+
+nanda_reception = subham.created_events.find_or_initialize_by(
+    title: 'Nanda Reception',
+    date: '2025-01-29 20:00:00'
+)
+nanda_reception.save!
+
+satya_bahaghara = satya.created_events.find_or_initialize_by(
+    title: 'Satya Bahaghara',
+    date: '2025-01-22 21:00:00'
+)
+satya_bahaghara.save!
+
+satya_reception = satya.created_events.find_or_initialize_by(
+    title: 'Satya Reception',
+    date: '2025-01-25 20:00:00'
+)
+satya_reception.save!

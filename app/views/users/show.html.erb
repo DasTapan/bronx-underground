@@ -1,0 +1,15 @@
+<h1>User:</h1>
+
+<ul>
+  <li><%= @user.id%></li>
+  <li><%= @user.email %></li>
+</ul>
+
+<h2>Created Events:</h2>
+
+<ul>
+    <% @events.map do |e| %>
+        <li><%= e.title%></li>
+        <li><%= e.date%></li>
+    <% end %>
+</ul>
