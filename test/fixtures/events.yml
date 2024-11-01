@@ -4,8 +4,33 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 1
+  title: "Nanda Bahaghara"
+  date: "2024-01-26-14-00-00"
+  creator_id: 3
+two:
+  id: 2
+  title: "Satya Bahaghara"
+  date: "2024-01-22-21-00-00"
+  creator_id: 6
+three:
+  id: 3
+  title: "Deba Bahaghara"
+  date: "2024-01-12-15-00-00"
+  creator_id: 2
+four:
+  id: 4
+  title: "Nanada Reception"
+  date: "2024-01-29-20-00-00"
+  creator_id: 3
+five:
+  id: 5
+  title: "Satya Reception"
+  date: "2024-01-25-20-00-00"
+  creator_id: 6
+six:
+  id: 6
+  title: "Deba Reception"
+  date: "2024-01-18-20-00-00"
+  creator_id: 2

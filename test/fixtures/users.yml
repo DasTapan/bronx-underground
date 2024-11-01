@@ -4,8 +4,46 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 1
+  email: "tapands.das@gmail.com"
+
+two:
+  id: 2
+  email: "debadash@gmail.com"
+
+three:
+  id: 3
+  email: "subhamnanda@gmail.com"
+
+four:
+  id: 4
+  email: "shaktimishra@gmail.com"
+
+five:
+  id: 5
+  email: "narayansatpathy@gmail.com"
+
+six:
+  id: 6
+  email: "satyasahoo@gmail.com"
+
+seven:
+  id: 7
+  email: "sibamohapatra@gmail.com"
+
+eight:
+  id: 8
+  email: "swabhimandas@gmail.com"
+
+nine:
+  id: 9
+  email: "sekhardas@gmail.com"
+
+ten:
+  id: 10
+  email: "sanjayadas@gmail.com"
+
+eleven:
+  id: 11
+  email: "rakeshmishra@gmail.com"
