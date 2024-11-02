@@ -1,0 +1,22 @@
+<h1>This contains a form to build a new event</h1>
+
+<%=form_with model: @created_event do |form|%>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :date %><br>
+        <%= form.date_field :date %>
+    </div>
+
+    <div>
+        <%= form.label :time %><br>
+        <%= form.time_field :time %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<%end%>

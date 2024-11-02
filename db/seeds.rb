@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 tapan = User.where(email: 'tapands.das@gmail.com').first_or_initialize
 tapan.update!(
     password: 'password',
@@ -76,24 +77,28 @@ rakesh.update!(
 
 nanda_bahaghara = subham.created_events.find_or_initialize_by(
     title: 'Nanda Bahaghara',
-    date: '2025-01-26 15:00:00'
+    date: Date.new(2025,01,26),
+    time: Time.new(2025,01,26,15,0,0,"+05:30")
 )
 nanda_bahaghara.save!
 
 nanda_reception = subham.created_events.find_or_initialize_by(
     title: 'Nanda Reception',
-    date: '2025-01-29 20:00:00'
+    date: Date.new(2025,01,29),
+    time: Time.new(2025,01,29,20,0,0,"+05:30")
 )
 nanda_reception.save!
 
 satya_bahaghara = satya.created_events.find_or_initialize_by(
     title: 'Satya Bahaghara',
-    date: '2025-01-22 21:00:00'
+    date: Date.new(2025,01,22),
+    time: Time.new(2025,01,22,21,0,0,"+05:30")
 )
 satya_bahaghara.save!
 
 satya_reception = satya.created_events.find_or_initialize_by(
     title: 'Satya Reception',
-    date: '2025-01-25 20:00:00'
+    date: Date.new(2025,01,25),
+    time: Time.new(2025,01,25,20,0,0,"+05:30")
 )
 satya_reception.save!

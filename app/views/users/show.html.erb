@@ -7,9 +7,14 @@
 
 <h2>Created Events:</h2>
 
-<ul>
+<ol>
     <% @events.map do |e| %>
-        <li><%= e.title%></li>
-        <li><%= e.date%></li>
+        <li>
+          <ul>
+            <li><%=e.title%></li>
+            <li><%=e.date.strftime("%d-%m-%Y")%></li>
+            <li><%=e.time.strftime("%I:%M %p")%></li>
+          </ul>
+        </li>
     <% end %>
-</ul>
+</ol>

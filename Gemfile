@@ -59,3 +59,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'pry', '~> 0.14.2'
