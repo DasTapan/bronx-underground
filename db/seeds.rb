@@ -74,31 +74,3 @@ rakesh.update!(
     password: 'password_eleven',
     password_confirmation: 'password_eleven'
 )
-
-nanda_bahaghara = subham.created_events.find_or_initialize_by(
-    title: 'Nanda Bahaghara',
-    date: Date.new(2025,01,26),
-    time: Time.new(2025,01,26,15,0,0,"+05:30")
-)
-nanda_bahaghara.save!
-
-nanda_reception = subham.created_events.find_or_initialize_by(
-    title: 'Nanda Reception',
-    date: Date.new(2025,01,29),
-    time: Time.new(2025,01,29,20,0,0,"+05:30")
-)
-nanda_reception.save!
-
-satya_bahaghara = satya.created_events.find_or_initialize_by(
-    title: 'Satya Bahaghara',
-    date: Date.new(2025,01,22),
-    time: Time.new(2025,01,22,21,0,0,"+05:30")
-)
-satya_bahaghara.save!
-
-satya_reception = satya.created_events.find_or_initialize_by(
-    title: 'Satya Reception',
-    date: Date.new(2025,01,25),
-    time: Time.new(2025,01,25,20,0,0,"+05:30")
-)
-satya_reception.save!

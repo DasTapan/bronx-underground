@@ -1,1 +1,17 @@
 <h1>List of all events</h1>
+
+<%= link_to "Create New Event", new_event_path %>
+
+<% if signed_in? %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<%else%>
+    <%= link_to "Sign In", new_user_session_path %>
+<%end%>
+
+<ul>
+    <% @events.map do |e| %>
+        <li>
+            <%=link_to e.title, e%>
+        </li>
+    <% end %>
+</ul>
