@@ -5,7 +5,11 @@
 <h4><%=@created_event.time.strftime("%I:%M %p")%></h4>
 
 <div>
-    <%=link_to "Attend the event", new_event_booking_path(@created_event)%>
+    <% if @is_an_attendee %>
+        <span>You are already attending</span>
+    <%else%>    
+        <%=link_to "Attend the event", new_event_booking_path(@created_event)%>
+    <%end%>
 </div>
 
 <h2>List of Attendees</h2>
