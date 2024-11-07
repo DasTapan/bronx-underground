@@ -1,0 +1,10 @@
+<h1>This is sign up page for an event by signed in user</h1>
+
+<%= form_with url: event_bookings_path do |form| %>
+    <%= form.check_box :attend %>
+    <%= form.label :attend, "Attend" %>
+
+    <div>
+        <%= form.submit "Sign Up"%>
+    </div>
+<% end %>

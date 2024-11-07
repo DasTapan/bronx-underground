@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   root "events#index"
 
   resources :users
-  resources :events
+  
+  resources :events do
+    resources :bookings
+  end
+  
 end

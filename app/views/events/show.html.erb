@@ -5,5 +5,23 @@
 <h4><%=@created_event.time.strftime("%I:%M %p")%></h4>
 
 <div>
-    <><>
+    <%=link_to "Attend the event", new_event_booking_path(@created_event)%>
 </div>
+
+<h2>List of Attendees</h2>
+
+<ul>
+    <% @attendees.map do |a| %>
+        <li>
+            <ul>
+                <li>
+                    <%= a.id %>
+                </li>
+                <li>
+                    <%= a.email %>
+                </li>
+            </ul>
+        </li>
+    <% end %>
+</ul>
+
