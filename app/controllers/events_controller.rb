@@ -9,11 +9,7 @@ class EventsController < ApplicationController
         @created_event = Event.find(params[:id])
         @attendees = @created_event.attendees
         attendee_ids = @created_event.attendees.pluck(:id)
-        @is_an_attendee = if get_current_user_id.nil?
-            nil
-        else
-            attendee_ids.include?(get_current_user_id)
-        end
+        @is_an_attendee = Events::ShowSerializer.new(params[:id],get_current_user_id).call
     end
 
     def new
