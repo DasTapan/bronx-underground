@@ -1,14 +1,10 @@
 class BookingsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_user
+    before_action :set_event
     
     def new
         is_an_attendee = Events::ShowSerializer.new(@event.id, current_user.id)
-        if is_an_attendee.nil?
-            @booking = Booking.new
-        else
-            redirect_to event_path(@event.id)
-        end
+        @booking = Booking.new
     end
 
     def create
@@ -29,7 +25,7 @@ class BookingsController < ApplicationController
 
     private
     
-    def set_user
+    def set_event
         @event = Event.find(params[:event_id])
     end
     
