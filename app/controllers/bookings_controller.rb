@@ -13,13 +13,23 @@ class BookingsController < ApplicationController
             @booking = @event.bookings.build(event_id: @event.id, attendee_id: current_user.id)
             
             if @booking.save
-                redirect_to root_path
+                redirect_to event_path(@event)
             else
                 render :new, status: :unprocessable_entity
             end    
         end
     end
 
+    def edit
+        # @booking = Booking.find(params[:id])
+    end
+    
+    def destroy
+        @booking = Booking.find(booking_params[:id])
+        @booking.destroy
+        redirect_to root_path, status: :see_other
+    end
+    
     def update
     end
 
@@ -30,6 +40,6 @@ class BookingsController < ApplicationController
     end
     
     def booking_params
-        params.permit(:attend)
+        params.permit(:attend,:id)
     end
 end

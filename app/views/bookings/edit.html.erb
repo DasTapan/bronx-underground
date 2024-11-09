@@ -1,0 +1,5 @@
+<h1>change status if you want </h1>
+
+<%=form_with url: event_booking_path, method: :delete do |form| %>    
+    <%= form.submit "Do not attend", data: {turbo_confirm: "Are you sure?"}%>
+<%end%>
