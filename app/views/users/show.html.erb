@@ -8,7 +8,7 @@
 <h2>Created Events:</h2>
 
 <ol>
-    <% @events.map do |e| %>
+    <% @created_events.map do |e| %>
         <li>
           <ul>
             <li><%=e.title%></li>
@@ -18,3 +18,18 @@
         </li>
     <% end %>
 </ol>
+
+<h2>Attended Events:</h2>
+
+<ol>
+    <% @attended_events.map do |e| %>
+        <li>
+          <ul>
+            <li><%=e.title%></li>
+            <li><%=e.date.strftime("%d-%m-%Y")%></li>
+            <li><%=e.time.strftime("%I:%M %p")%></li>
+          </ul>
+        </li>
+    <% end %>
+</ol>
+
