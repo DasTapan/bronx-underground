@@ -1,5 +1,7 @@
 <h1>User:</h1>
 
+<%=link_to "Home", root_path%>
+
 <ul>
   <li><%= @user.id%></li>
   <li><%= @user.email %></li>
@@ -19,17 +21,34 @@
     <% end %>
 </ol>
 
-<h2>Attended Events:</h2>
+<section class="flex justify-between">
+  <div>
+    <h2>Attended Events:</h2>
+    <ol>
+      <% @attended_events.filter {|e| e.date < Time.zone.today}.map do |ae| %>
+          <li>
+            <ul>
+              <li><%=ae.title%></li>
+              <li><%=ae.date.strftime("%d-%m-%Y")%></li>
+              <li><%=ae.time.strftime("%I:%M %p")%></li>
+            </ul>
+          </li>
+      <%end%>
+    </ol>
+  </div>
 
-<ol>
-    <% @attended_events.map do |e| %>
-        <li>
-          <ul>
-            <li><%=e.title%></li>
-            <li><%=e.date.strftime("%d-%m-%Y")%></li>
-            <li><%=e.time.strftime("%I:%M %p")%></li>
-          </ul>
-        </li>
-    <% end %>
-</ol>
-
+  <div>
+    <h2>Future Events:</h2>
+    <ol>
+      <% @attended_events.filter {|e| e.date > Time.zone.today}.map do |ae| %>
+          <li>
+            <ul>
+              <li><%=ae.title%></li>
+              <li><%=ae.date.strftime("%d-%m-%Y")%></li>
+              <li><%=ae.time.strftime("%I:%M %p")%></li>
+            </ul>
+          </li>
+      <%end%>
+    </ol>
+  </div>
+</section>

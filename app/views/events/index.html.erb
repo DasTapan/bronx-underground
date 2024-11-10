@@ -1,5 +1,9 @@
 <h1>List of all events</h1>
 
+<%if signed_in? %>
+    <h2><%= link_to "Your Summary", user_path(current_user) %></h2>
+<%end%>
+
 <%= link_to "Create New Event", new_event_path %>
 
 <% if signed_in? %>
