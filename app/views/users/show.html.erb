@@ -25,7 +25,7 @@
   <div>
     <h2>Attended Events:</h2>
     <ol>
-      <% @attended_events.filter {|e| e.date < Time.zone.today}.map do |ae| %>
+      <% @attended_events.filter {|e| Time.parse(e[:date].strftime("%F ") + e[:time].strftime("%R")) < Time.current}.map do |ae| %>
           <li>
             <ul>
               <li><%=ae.title%></li>
@@ -40,7 +40,7 @@
   <div>
     <h2>Future Events:</h2>
     <ol>
-      <% @attended_events.filter {|e| e.date > Time.zone.today}.map do |ae| %>
+      <% @attended_events.filter {|e| Time.parse(e[:date].strftime("%F ") + e[:time].strftime("%R")) >= Time.current}.map do |ae| %>
           <li>
             <ul>
               <li><%=ae.title%></li>
