@@ -14,8 +14,8 @@
         <li>
           <ul>
             <li><%=e.title%></li>
-            <li><%=e.date.strftime("%d-%m-%Y")%></li>
-            <li><%=e.time.strftime("%I:%M %p")%></li>
+            <li><%=e.event_at.strftime("%d-%m-%Y")%></li>
+            <li><%=e.event_at.strftime("%I:%M %p")%></li>
           </ul>
         </li>
     <% end %>
@@ -25,12 +25,12 @@
   <div>
     <h2>Attended Events:</h2>
     <ol>
-      <% @attended_events.filter {|e| Time.parse(e[:date].strftime("%F ") + e[:time].strftime("%R")) < Time.current}.map do |ae| %>
+      <% @attended_events.filter {|e| e.event_at < Time.current}.map do |ae| %>
           <li>
             <ul>
               <li><%=ae.title%></li>
-              <li><%=ae.date.strftime("%d-%m-%Y")%></li>
-              <li><%=ae.time.strftime("%I:%M %p")%></li>
+              <li><%=ae.event_at.strftime("%d-%m-%Y")%></li>
+              <li><%=ae.event_at.strftime("%I:%M %p")%></li>
             </ul>
           </li>
       <%end%>
@@ -40,12 +40,12 @@
   <div>
     <h2>Future Events:</h2>
     <ol>
-      <% @attended_events.filter {|e| Time.parse(e[:date].strftime("%F ") + e[:time].strftime("%R")) >= Time.current}.map do |ae| %>
+      <% @attended_events.filter {|e| e.event_at >= Time.current}.map do |ae| %>
           <li>
             <ul>
               <li><%=ae.title%></li>
-              <li><%=ae.date.strftime("%d-%m-%Y")%></li>
-              <li><%=ae.time.strftime("%I:%M %p")%></li>
+              <li><%=ae.event_at.strftime("%d-%m-%Y")%></li>
+              <li><%=ae.event_at.strftime("%I:%M %p")%></li>
             </ul>
           </li>
       <%end%>

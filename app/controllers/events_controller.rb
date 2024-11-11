@@ -20,7 +20,8 @@ class EventsController < ApplicationController
     end
 
     def create
-        @created_event = current_user.created_events.build(event_params)
+        set_event_date_and_time
+        @created_event = current_user.created_events.build({title: event_params[:title], event_at: @event_date_and_time})
 
         if @created_event.save
             redirect_to @created_event
@@ -32,7 +33,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:date, :title, :time)
+        params.require(:event).permit(:title, :event_on, :event_at)        
     end
 
     def get_current_user_id
@@ -41,5 +42,11 @@ class EventsController < ApplicationController
         else
             nil
         end
+    end
+
+    def set_event_date_and_time
+        event_date = event_params[:event_on]
+        event_time = event_params[:event_at]
+        @event_date_and_time = Time.parse("#{event_date} #{event_time}")
     end
 end
