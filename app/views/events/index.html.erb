@@ -17,13 +17,7 @@
     <h2>Past Events:</h2>
     <ol>
       <% @past_events.map do |e| %>
-          <li>
-            <ul>
-              <li><%=e.title%></li>
-              <li><%=e.event_at.strftime("%d-%m-%Y")%></li>
-              <li><%=e.event_at.strftime("%I:%M %p")%></li>
-            </ul>
-          </li>
+          <li><%= link_to e.title, event_path(e) %></li>
       <%end%>
     </ol>
   </div>
@@ -32,13 +26,7 @@
     <h2>Future Events:</h2>
     <ol>
       <% @future_events.map do |e| %>
-          <li>
-            <ul>
-              <li><%=e.title%></li>
-              <li><%=e.event_at.strftime("%d-%m-%Y")%></li>
-              <li><%=e.event_at.strftime("%I:%M %p")%></li>
-            </ul>
-          </li>
+          <li><%= link_to e.title, event_path(e) %></li>
       <%end%>
     </ol>
   </div>

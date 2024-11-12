@@ -20,6 +20,12 @@ class EventsController < ApplicationController
         @created_event = Event.new
     end
 
+    def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        redirect_to root_path, status: :see_other
+    end
+    
     def create
         set_event_date_and_time
         @created_event = current_user.created_events.build({title: event_params[:title], event_at: @event_date_and_time})
