@@ -12,10 +12,34 @@
     <%= link_to "Sign In", new_user_session_path %>
 <%end%>
 
-<ul>
-    <% @events.map do |e| %>
-        <li>
-            <%=link_to e.title, e%>
-        </li>
-    <% end %>
-</ul>
+<section class="flex justify-between">
+  <div>
+    <h2>Past Events:</h2>
+    <ol>
+      <% @past_events.map do |e| %>
+          <li>
+            <ul>
+              <li><%=e.title%></li>
+              <li><%=e.event_at.strftime("%d-%m-%Y")%></li>
+              <li><%=e.event_at.strftime("%I:%M %p")%></li>
+            </ul>
+          </li>
+      <%end%>
+    </ol>
+  </div>
+
+  <div>
+    <h2>Future Events:</h2>
+    <ol>
+      <% @future_events.map do |e| %>
+          <li>
+            <ul>
+              <li><%=e.title%></li>
+              <li><%=e.event_at.strftime("%d-%m-%Y")%></li>
+              <li><%=e.event_at.strftime("%I:%M %p")%></li>
+            </ul>
+          </li>
+      <%end%>
+    </ol>
+  </div>
+</section>
