@@ -20,6 +20,10 @@
     <% end %>
 </div>
 
+<%if @is_creator%>
+    <%= link_to "Edit", edit_event_path %>
+<%end%>
+
 <h2>List of Attendees</h2>
 
 <ul>

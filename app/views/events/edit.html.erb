@@ -1,0 +1,22 @@
+<h1>This is where you edit future event</h1>
+
+<%=form_with model: @event do |form|%>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :event_on %><br>
+        <%= form.date_field :event_on, value: @event.event_at.strftime("%Y-%m-%d") %>
+    </div>
+
+    <div>
+        <%= form.label :event_at %><br>
+        <%= form.time_field :event_at, value: @event.event_at.strftime("%H:%M") %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<%end%>
